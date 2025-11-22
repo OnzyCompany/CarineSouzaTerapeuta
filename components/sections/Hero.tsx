@@ -21,7 +21,8 @@ const Hero: React.FC = () => {
     <section 
       id="hero" 
       ref={ref}
-      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 bg-primary-cream"
+      // Changed min-h-screen to min-h-[100dvh] for mobile browser support
+      className="relative min-h-screen min-h-[100dvh] flex items-center justify-center overflow-hidden pt-20 bg-primary-cream supports-[min-height:100dvh]:min-h-[100dvh]"
     >
       {/* Background with Gradients */}
       <motion.div 
