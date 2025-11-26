@@ -66,7 +66,7 @@ const CTA: React.FC = () => {
               <Instagram size={32} strokeWidth={1.5} />
             </a>
             <a 
-              href="mailto:contato@carinesouza.com" 
+              href="mailto:carinesouza3319@gmail.com" 
               className="text-white hover:text-white/80 transition-transform hover:scale-110"
             >
               <Mail size={32} strokeWidth={1.5} />

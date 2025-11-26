@@ -45,6 +45,10 @@ const About: React.FC = () => {
               <Quote className="absolute top-6 left-6 text-[#FFB6C1] opacity-50 w-12 h-12 rotate-180" />
               
               <div className="prose prose-lg text-gray-800 relative z-10 pl-4 font-sans">
+                <p className="mb-6 leading-relaxed font-medium text-lg md:text-xl text-gray-700">
+                  Meu nome é Carine Souza, sou casada e tenho três filhos. Fui confeiteira, tenho curso Técnico em RH e hoje vivo essa linda missão como Terapeuta Especialista no Universo Emocional Feminino 🌷
+                </p>
+
                 <p className="mb-6 italic text-gray-600 font-serif text-2xl md:text-3xl leading-relaxed">
                   "Eu fui uma criança rejeitada pelo meu pai desde o meu primeiro ano de vida..."
                 </p>

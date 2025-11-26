@@ -13,7 +13,7 @@ const Footer: React.FC = () => {
               Carine<span className="text-[#7FE7DC]">Souza</span>
             </h3>
             <p className="text-gray-600 leading-relaxed font-medium max-w-xs text-lg">
-              Cuidar da Saúde Mental é um ato de Amor Próprio. Especialista em Terapia Integrativa e autoestima feminina.
+              Especialista em gestão Emocional e Autoestima.
             </p>
             <div className="flex space-x-4 pt-2">
               <a 
@@ -47,7 +47,7 @@ const Footer: React.FC = () => {
             <h4 className="font-bold text-gray-900 text-xl font-serif">Onde Me Encontrar</h4>
             <div className="flex items-start space-x-4 text-gray-600">
               <MapPin className="w-7 h-7 mt-1 text-[#7FE7DC] shrink-0" />
-              <span className="font-medium text-lg">Rua Manoel Monteiro, 40<br/>Maracás, Bahia</span>
+              <span className="font-medium text-lg">Rua Manoel Monteiro, 40<br/>Bairro Novo Horizonte<br/>Vazante - MG</span>
             </div>
             <div className="flex items-center space-x-4 text-gray-600">
               <Clock className="w-7 h-7 text-[#7FE7DC] shrink-0" />
@@ -57,10 +57,10 @@ const Footer: React.FC = () => {
         </div>
 
         <div className="border-t border-gray-100 pt-12 flex flex-col md:flex-row justify-between items-center text-base text-gray-500 font-medium">
-          <p className="mb-4 md:mb-0">
+          <p className="mb-4 md:mb-0 text-center md:text-left">
             &copy; {new Date().getFullYear()} <a href="https://www.instagram.com/s.carinesouza" target="_blank" rel="noopener noreferrer" className="hover:text-[#FFB6C1] transition-colors font-bold">Carine Souza</a>. Todos os direitos reservados.
           </p>
-          <p>
+          <p className="text-center md:text-right md:mr-24">
             Desenvolvido por <a href="https://www.instagram.com/onzy.company" target="_blank" rel="noopener noreferrer" className="hover:text-[#8A2BE2] transition-colors font-bold">Onzy Company</a>
           </p>
         </div>

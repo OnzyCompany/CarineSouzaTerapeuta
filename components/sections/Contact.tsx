@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import SectionHeading from '../ui/SectionHeading';
-import { MapPin, Clock, MessageCircle } from 'lucide-react';
+import { MapPin, Clock, MessageCircle, Mail } from 'lucide-react';
 
 const Contact: React.FC = () => {
   return (
@@ -29,7 +29,8 @@ const Contact: React.FC = () => {
                   <p className="font-bold text-gray-900 text-xl mb-1">Endereço</p>
                   <p className="text-gray-700 font-medium text-lg leading-relaxed">
                     Rua Manoel Monteiro, 40<br />
-                    Maracás, Bahia
+                    Bairro Novo Horizonte<br />
+                    Vazante - MG
                   </p>
                 </div>
               </motion.div>
@@ -44,6 +45,24 @@ const Contact: React.FC = () => {
                 <div>
                   <p className="font-bold text-gray-900 text-xl mb-1">Horário de Atendimento</p>
                   <p className="text-gray-700 font-medium text-lg">Segunda a Sexta: 07h às 18h</p>
+                </div>
+              </motion.div>
+
+              <motion.div 
+                 whileHover={{ x: 5 }}
+                 className="flex items-start gap-6"
+              >
+                <div className="p-5 bg-[#E0F2F1] rounded-2xl text-[#009688] shadow-sm shrink-0">
+                  <Mail size={28} />
+                </div>
+                <div>
+                  <p className="font-bold text-gray-900 text-xl mb-1">E-mail</p>
+                  <a 
+                    href="mailto:carinesouza3319@gmail.com"
+                    className="text-gray-700 font-medium text-lg hover:text-[#009688] transition-colors"
+                  >
+                    carinesouza3319@gmail.com
+                  </a>
                 </div>
               </motion.div>
 
@@ -75,8 +94,8 @@ const Contact: React.FC = () => {
           {/* Map Side */}
           <div className="lg:w-1/2 bg-gray-200 relative min-h-[450px]">
              <iframe 
-                title="Mapa Maracás"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3884.8966054043286!2d-40.4311!3d-13.4436!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTPCsDI2JzM3LjAiUyA0MMKwMjUnNTIuMCJX!5e0!3m2!1sen!2sbr!4v1600000000000!5m2!1sen!2sbr" 
+                title="Mapa Vazante"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3788.006730598687!2d-46.9085006!3d-17.9863889!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94afd4c7a52c3c1b%3A0x1234567890abcdef!2sRua%20Manoel%20Monteiro%2C%2040%20-%20Novo%20Horizonte%2C%20Vazante%20-%20MG!5e0!3m2!1sen!2sbr!4v1600000000000!5m2!1sen!2sbr" 
                 width="100%" 
                 height="100%" 
                 style={{ border: 0, position: 'absolute', inset: 0 }} 

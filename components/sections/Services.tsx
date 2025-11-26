@@ -19,19 +19,19 @@ const services = [
   {
     id: 'bem-estar',
     title: 'Momentos de Bem-Estar',
-    description: 'Sessões especiais focadas em relaxamento, reequilíbrio energético e conexão interior.',
+    description: 'Sessões especiais focadas em relaxamento, Equilíbrio emocional e conexão interior.',
     icon: Sparkles,
   },
   {
     id: 'workshops',
     title: 'Workshops',
-    description: 'Eventos educativos em grupo focados em temas como autoestima, relacionamentos e inteligência emocional.',
+    description: 'Encontros em grupo focados em temas como saúde mental, autoestima e inteligência emocional.',
     icon: Users,
   },
   {
     id: 'vivencias',
     title: 'Vivências Terapêuticas',
-    description: 'Experiências imersivas profundas para desbloqueio emocional e cura de traumas.',
+    description: 'Experiências marcadas por um momento de bem estar, conhecimento e conexão com sua essência.',
     icon: HeartHandshake,
   }
 ];

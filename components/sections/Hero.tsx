@@ -60,7 +60,7 @@ const Hero: React.FC = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-xl text-gray-700 max-w-lg mx-auto md:mx-0 font-normal leading-relaxed"
           >
-            Especialista em autoestima e autocura emocional. Um espaço seguro para transformar suas feridas em força.
+            Especialista em gestão Emocional e Autoestima.
           </motion.p>
 
           <motion.div 
