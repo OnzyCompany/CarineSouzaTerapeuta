@@ -7,7 +7,7 @@ const services = [
   {
     id: 'presencial',
     title: 'Terapia Presencial',
-    description: 'Atendimento acolhedor em consultório privado em Jaguaquara. Um ambiente seguro para sua transformação.',
+    description: 'Atendimento acolhedor em consultório privado em Vazante MG. Um ambiente seguro para sua transformação.',
     icon: User,
   },
   {

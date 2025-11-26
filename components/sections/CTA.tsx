@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Button from '../ui/Button';
-import { MessageCircle, Instagram, Mail } from 'lucide-react';
+import { MessageCircle, Instagram, Mail, Facebook } from 'lucide-react';
 
 const CTA: React.FC = () => {
   const handleWhatsAppClick = () => {
@@ -48,12 +48,13 @@ const CTA: React.FC = () => {
             </Button>
           </motion.div>
 
-          <div className="flex justify-center items-center gap-8 pt-8 border-t border-white/30 max-w-xs mx-auto">
+          <div className="flex justify-center items-center gap-8 pt-8 border-t border-white/30 max-w-sm mx-auto">
             <a 
               href="https://wa.me/553499057458" 
               target="_blank" 
               rel="noopener noreferrer"
               className="text-white hover:text-white/80 transition-transform hover:scale-110"
+              aria-label="WhatsApp"
             >
               <MessageCircle size={32} strokeWidth={1.5} />
             </a>
@@ -62,12 +63,23 @@ const CTA: React.FC = () => {
               target="_blank" 
               rel="noopener noreferrer"
               className="text-white hover:text-white/80 transition-transform hover:scale-110"
+              aria-label="Instagram"
             >
               <Instagram size={32} strokeWidth={1.5} />
             </a>
             <a 
+              href="https://www.facebook.com/share/1CccKjLjrD/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-white hover:text-white/80 transition-transform hover:scale-110"
+              aria-label="Facebook"
+            >
+              <Facebook size={32} strokeWidth={1.5} />
+            </a>
+            <a 
               href="mailto:carinesouza3319@gmail.com" 
               className="text-white hover:text-white/80 transition-transform hover:scale-110"
+              aria-label="Email"
             >
               <Mail size={32} strokeWidth={1.5} />
             </a>

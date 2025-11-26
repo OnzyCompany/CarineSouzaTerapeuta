@@ -1,5 +1,5 @@
 import React from 'react';
-import { Instagram, MapPin, Clock } from 'lucide-react';
+import { Instagram, Facebook, MapPin, Clock } from 'lucide-react';
 
 const Footer: React.FC = () => {
   return (
@@ -24,6 +24,15 @@ const Footer: React.FC = () => {
                 aria-label="Siga-nos no Instagram"
               >
                 <Instagram size={28} />
+              </a>
+              <a 
+                href="https://www.facebook.com/share/1CccKjLjrD/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="p-4 rounded-full shadow-md hover:shadow-xl text-white transition-all duration-300 hover:-translate-y-2 bg-gradient-to-tr from-[#1877F2] to-[#0b53b8]"
+                aria-label="Curta nossa página no Facebook"
+              >
+                <Facebook size={28} />
               </a>
             </div>
           </div>
