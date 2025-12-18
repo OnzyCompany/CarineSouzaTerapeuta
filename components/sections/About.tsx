@@ -4,24 +4,24 @@ import { Quote } from 'lucide-react';
 
 const About: React.FC = () => {
   return (
-    <section id="about" className="py-24 bg-[#F2F9F9] relative">
+    <section id="about" className="py-20 md:py-32 bg-[#F2F9F9] relative scroll-mt-20">
       <div className="container mx-auto px-4">
         {/* Título unificado no gradiente azul água conforme solicitado */}
-        <div className="mb-12 text-center">
+        <div className="mb-12 md:mb-20 text-center">
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-3xl md:text-5xl font-serif font-bold text-gray-800 mb-4"
+            className="text-3xl md:text-5xl lg:text-6xl font-serif font-bold text-gray-900 mb-6 leading-tight px-2"
           >
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#01a7aa] to-[#40ced0]">Minha História</span>, 
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#01a7aa] to-[#40ced0] ml-3">Sua Inspiração</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#01a7aa] to-[#40ced0] block md:inline mt-2 md:mt-0">Sua Inspiração</span>
           </motion.h2>
-          <div className="h-1.5 w-24 bg-gradient-to-r from-[#01a7aa] to-[#40ced0] mx-auto rounded-full" />
+          <div className="h-2 w-32 bg-gradient-to-r from-[#01a7aa] to-[#40ced0] mx-auto rounded-full" />
         </div>
 
-        <div className="flex flex-col lg:flex-row gap-16 items-center mt-12">
+        <div className="flex flex-col lg:flex-row gap-16 lg:gap-24 items-center">
           
           {/* Image Side */}
           <motion.div 
@@ -31,13 +31,13 @@ const About: React.FC = () => {
             transition={{ duration: 0.8 }}
             className="w-full lg:w-1/2"
           >
-             <div className="relative">
+             <div className="relative max-w-sm md:max-w-md mx-auto">
                 <img 
                   src="https://res.cloudinary.com/dxhlvrach/image/upload/v1763784486/CarineSouza_brks39.jpg" 
                   alt="Carine Souza" 
-                  className="rounded-tr-[5rem] rounded-bl-[5rem] shadow-2xl w-full max-w-md mx-auto object-cover z-10 relative grayscale hover:grayscale-0 transition-all duration-700"
+                  className="rounded-tr-[4rem] rounded-bl-[4rem] md:rounded-tr-[5rem] md:rounded-bl-[5rem] shadow-2xl w-full object-cover z-10 relative grayscale hover:grayscale-0 transition-all duration-700"
                 />
-                <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-[#01a7aa] rounded-full opacity-20 -z-0 blur-2xl"></div>
+                <div className="absolute -bottom-6 -left-6 md:-bottom-10 md:-left-10 w-32 h-32 md:w-40 md:h-40 bg-[#01a7aa] rounded-full opacity-20 -z-0 blur-2xl"></div>
              </div>
           </motion.div>
 
@@ -49,34 +49,38 @@ const About: React.FC = () => {
             transition={{ duration: 0.8 }}
             className="w-full lg:w-1/2"
           >
-            <div className="bg-white p-10 rounded-2xl border border-gray-200 shadow-xl relative">
-              <Quote className="absolute top-6 left-6 text-[#01a7aa] opacity-40 w-12 h-12 rotate-180" />
+            <div className="bg-white p-8 md:p-12 rounded-3xl border border-gray-100 shadow-xl relative overflow-hidden">
+              <Quote className="absolute -top-4 -left-4 text-[#01a7aa] opacity-10 w-24 h-24 rotate-180" />
               
-              <div className="prose prose-lg text-gray-800 relative z-10 pl-4 font-sans">
-                <p className="mb-6 leading-relaxed font-bold text-lg md:text-xl text-gray-700">
+              <div className="relative z-10 space-y-6">
+                <p className="text-gray-800 leading-relaxed font-bold text-xl md:text-2xl">
                   Meu nome é Carine Souza, sou casada e tenho três filhos. Fui confeiteira, tenho curso Técnico em RH e hoje vivo essa linda missão como Terapeuta Especialista no Universo Emocional Feminino 🌷
                 </p>
 
-                <p className="mb-6 italic text-gray-600 font-serif text-2xl md:text-3xl leading-relaxed">
-                  "Eu fui uma criança rejeitada pelo meu pai desde o meu primeiro ano de vida..."
-                </p>
-                <p className="mb-6 leading-relaxed font-bold text-lg md:text-xl text-gray-700">
-                  Cresci em um lar cheio de agitação, sem atenção, amor e carinho da minha mãe (somente minha avó me acolhia). 
+                <div className="py-4">
+                  <p className="italic text-gray-500 font-serif text-2xl md:text-3xl leading-relaxed border-l-4 border-[#01a7aa]/30 pl-6">
+                    "Eu fui uma criança rejeitada pelo meu pai desde o meu primeiro ano de vida..."
+                  </p>
+                </div>
+
+                <p className="leading-relaxed font-medium text-lg md:text-xl text-gray-700">
+                  Cresci em um lar cheio de agitação, sem atenção, amor e carinho da minha mãe. 
                   Sofri com as feridas emocionais do abandono, rejeição e injustiça.
                 </p>
-                <p className="font-bold text-gray-900 text-xl md:text-2xl mb-6 bg-gradient-to-r from-[#01a7aa]/20 to-transparent p-3 rounded-lg inline-block">
+                
+                <p className="font-bold text-gray-900 text-xl md:text-2xl bg-[#01a7aa]/5 p-4 rounded-2xl border-l-4 border-[#01a7aa]">
                   Sou uma sobrevivente! Hoje aprendi a viver!
                 </p>
-                <p className="leading-relaxed font-bold text-lg md:text-xl text-gray-700">
-                  Repeti vários padrões de comportamento e sofri com baixa autoestima por anos. 
+                
+                <p className="leading-relaxed font-medium text-lg md:text-xl text-gray-700">
                   Encontrei a minha cura na <strong className="text-[#01a7aa]">Terapia Integrativa</strong>! E hoje estou aqui para acolher a sua história e te ajudar em seu <span className="text-[#aa750b] font-bold">Processo de Autocura Emocional 🍃</span>
                 </p>
               </div>
 
               <div className="mt-12 flex items-center gap-4">
-                <div className="h-0.5 bg-gray-200 flex-1"></div>
+                <div className="h-px bg-gray-100 flex-1"></div>
                 <span className="font-serif font-bold text-2xl text-gray-900">Carine Souza</span>
-                <div className="h-0.5 bg-gray-200 flex-1"></div>
+                <div className="h-px bg-gray-100 flex-1"></div>
               </div>
             </div>
           </motion.div>
