@@ -44,41 +44,48 @@ const Header: React.FC = () => {
 
   return (
     <header 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-white/90 backdrop-blur-md shadow-sm py-3' : 'bg-transparent py-5'
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        isScrolled ? 'bg-white/95 backdrop-blur-md shadow-md py-1' : 'bg-transparent py-2'
       }`}
     >
       <div className="container mx-auto px-4 md:px-8 flex items-center justify-between">
-        {/* Logo Placeholder */}
         <a 
           href="#hero" 
           onClick={(e) => handleNavClick(e, '#hero')}
-          className="text-2xl font-serif font-bold text-gray-800 tracking-wide cursor-pointer"
+          className="relative z-10 block cursor-pointer transition-transform hover:scale-105"
         >
-          Carine<span className="text-[#7FE7DC]">Souza</span>
+          <img 
+            src="https://res.cloudinary.com/dxhlvrach/image/upload/v1766075026/Terapeuta_20251218_132103_0000_hr9cm4.png" 
+            alt="Carine Souza Logo" 
+            className={`
+              transition-all duration-500 object-contain
+              ${isScrolled ? 'h-16 md:h-20' : 'h-24 md:h-32'} 
+              w-auto
+            `}
+          />
         </a>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex space-x-8">
+        <nav className="hidden lg:flex items-center space-x-10">
           {navItems.map((item) => (
             <a
               key={item.label}
               href={item.href}
               onClick={(e) => handleNavClick(e, item.href)}
-              className="text-sm font-medium text-gray-600 hover:text-[#7FE7DC] transition-colors relative group cursor-pointer"
+              className="text-sm font-bold text-gray-800 hover:text-[#01a7aa] transition-colors relative group cursor-pointer uppercase tracking-widest"
             >
               {item.label}
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#FFB6C1] transition-all duration-300 group-hover:w-full" />
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#dbaf45] transition-all duration-300 group-hover:w-full" />
             </a>
           ))}
         </nav>
 
         {/* Mobile Toggle */}
         <button 
-          className="md:hidden text-gray-700 focus:outline-none"
+          className="lg:hidden text-gray-800 focus:outline-none p-3 hover:bg-gray-100 rounded-full transition-colors"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         >
-          {mobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+          {mobileMenuOpen ? <X size={36} /> : <Menu size={36} />}
         </button>
       </div>
 
@@ -89,15 +96,15 @@ const Header: React.FC = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-white border-b border-gray-100 overflow-hidden"
+            className="lg:hidden bg-white border-b border-gray-100 shadow-2xl overflow-hidden"
           >
-            <div className="container mx-auto px-4 py-4 flex flex-col space-y-4">
+            <div className="container mx-auto px-6 py-10 flex flex-col space-y-6">
               {navItems.map((item) => (
                 <a
                   key={item.label}
                   href={item.href}
                   onClick={(e) => handleNavClick(e, item.href)}
-                  className="text-gray-700 font-medium py-2 border-b border-gray-50 hover:text-[#7FE7DC] cursor-pointer"
+                  className="text-gray-900 font-bold text-2xl py-3 border-b border-gray-50 hover:text-[#01a7aa] cursor-pointer tracking-tight"
                 >
                   {item.label}
                 </a>

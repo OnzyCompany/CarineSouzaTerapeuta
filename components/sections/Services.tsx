@@ -72,15 +72,15 @@ const Services: React.FC = () => {
               key={service.id}
               variants={itemVariants}
               whileHover={{ y: -10 }}
-              className="bg-[#F8FAFC] p-8 rounded-2xl shadow-sm border border-gray-200 group hover:border-[#7FE7DC] transition-all duration-300 hover:bg-white hover:shadow-xl flex flex-col"
+              className="bg-[#F8FAFC] p-8 rounded-2xl shadow-sm border border-gray-200 group hover:border-[#01a7aa] transition-all duration-300 hover:bg-white hover:shadow-xl flex flex-col"
             >
               <div className="w-16 h-16 bg-white rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-md border border-gray-100">
-                <service.icon className="w-8 h-8 text-[#5EC7BC] group-hover:text-[#E095A0] transition-colors" />
+                <service.icon className="w-8 h-8 text-[#01a7aa] group-hover:text-[#dbaf45] transition-colors" />
               </div>
               <h3 className="text-2xl font-serif font-bold text-gray-800 mb-4">{service.title}</h3>
               <p className="text-gray-700 leading-relaxed font-medium text-lg flex-grow">{service.description}</p>
               
-              <div className="w-full h-1.5 bg-gradient-to-r from-[#7FE7DC] to-[#FFB6C1] mt-6 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left rounded-full"></div>
+              <div className="w-full h-1.5 bg-gradient-to-r from-[#01a7aa] to-[#dbaf45] mt-6 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left rounded-full"></div>
             </motion.div>
           ))}
         </motion.div>

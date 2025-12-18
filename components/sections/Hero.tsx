@@ -21,17 +21,16 @@ const Hero: React.FC = () => {
     <section 
       id="hero" 
       ref={ref}
-      // Changed min-h-screen to min-h-[100dvh] for mobile browser support
-      className="relative min-h-screen min-h-[100dvh] flex items-center justify-center overflow-hidden pt-20 bg-primary-cream supports-[min-height:100dvh]:min-h-[100dvh]"
+      className="relative min-h-screen min-h-[100dvh] flex items-center justify-center overflow-hidden pt-32 md:pt-40 bg-primary-cream supports-[min-height:100dvh]:min-h-[100dvh]"
     >
       {/* Background with Gradients */}
       <motion.div 
         style={{ y: yBg }}
         className="absolute inset-0 z-0"
       >
-        <div className="absolute inset-0 bg-gradient-to-br from-white via-[#E0F7FA]/50 to-[#FCE4EC]/50" />
-        <div className="absolute top-20 right-0 w-[500px] h-[500px] bg-[#7FE7DC]/20 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-[#FFB6C1]/20 rounded-full blur-3xl" />
+        <div className="absolute inset-0 bg-gradient-to-br from-white via-[#E0F7FA]/40 to-[#FDF4E3]/40" />
+        <div className="absolute top-20 right-0 w-[500px] h-[500px] bg-[#01a7aa]/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-[#dbaf45]/10 rounded-full blur-3xl" />
       </motion.div>
 
       <div className="container mx-auto px-4 z-10 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
@@ -46,11 +45,11 @@ const Hero: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <span className="inline-block py-2 px-4 rounded-full bg-white shadow-sm text-[#4DB6AC] font-bold tracking-wide text-sm mb-4 border border-[#7FE7DC]/30">
+            <span className="inline-block py-2 px-4 rounded-full bg-white shadow-sm text-[#01a7aa] font-bold tracking-widest text-xs mb-6 border border-[#01a7aa]/10 uppercase">
               TERAPIA INTEGRATIVA & SAÚDE EMOCIONAL
             </span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-gray-900 leading-tight drop-shadow-sm">
-              Cuidar da <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#5EC7BC] to-[#F06292]">Saúde Mental</span> é um ato de Amor Próprio 🤍
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-gray-900 leading-[1.15] drop-shadow-sm">
+              Cuidar da <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#01a7aa] to-[#40ced0]">Saúde Mental</span> é um ato de Amor Próprio 🤍
             </h1>
           </motion.div>
 
@@ -58,21 +57,21 @@ const Hero: React.FC = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-xl text-gray-700 max-w-lg mx-auto md:mx-0 font-normal leading-relaxed"
+            className="text-xl md:text-2xl text-gray-700 max-w-lg mx-auto md:mx-0 font-medium leading-relaxed"
           >
-            Especialista em gestão Emocional e Autoestima.
+            Especialista em Gestão Emocional e Autoestima.
           </motion.p>
 
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start"
+            className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start pt-4"
           >
-            <Button variant="primary" size="lg" onClick={handleWhatsAppClick}>
+            <Button variant="primary" size="lg" onClick={handleWhatsAppClick} className="shadow-lg">
               Agende sua Sessão
             </Button>
-            <Button variant="secondary" size="lg" onClick={() => document.getElementById('services')?.scrollIntoView()}>
+            <Button variant="secondary" size="lg" onClick={() => document.getElementById('services')?.scrollIntoView()} className="border-gray-200">
               Conheça meu trabalho
             </Button>
           </motion.div>
@@ -80,22 +79,22 @@ const Hero: React.FC = () => {
 
         {/* Image/Visual Content */}
         <motion.div 
-          initial={{ opacity: 0, scale: 0.9 }}
+          initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, delay: 0.2 }}
           className="relative hidden md:block"
         >
-          <div className="relative w-[400px] h-[550px] mx-auto">
-             {/* Decorative Blobs */}
-             <div className="absolute -top-6 -left-6 w-full h-full bg-[#7FE7DC] rounded-[2rem] opacity-40 rotate-[-6deg] animate-pulse-slow" />
-             <div className="absolute -bottom-6 -right-6 w-full h-full bg-[#FFB6C1] rounded-[2rem] opacity-40 rotate-[6deg]" />
+          <div className="relative w-[420px] h-[570px] mx-auto">
+             {/* Decorative Elements adjusted to lighter gold */}
+             <div className="absolute -top-6 -left-6 w-full h-full bg-[#01a7aa]/20 rounded-[2.5rem] rotate-[-4deg] animate-pulse-slow" />
+             <div className="absolute -bottom-6 -right-6 w-full h-full bg-[#dbaf45]/20 rounded-[2.5rem] rotate-[4deg]" />
              
              {/* Main Image Container */}
-             <div className="absolute inset-0 bg-white rounded-[2rem] shadow-2xl overflow-hidden border-4 border-white">
+             <div className="absolute inset-0 bg-white rounded-[2.5rem] shadow-2xl overflow-hidden border-[6px] border-white">
                 <img 
                   src="https://res.cloudinary.com/dxhlvrach/image/upload/v1763780546/8ca3e57a-87c7-4ae7-91f4-22670ae7a258_n8tqst.jpg" 
                   alt="Carine Souza Terapeuta" 
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-1000"
                 />
              </div>
           </div>

@@ -21,9 +21,10 @@ const WhyChoose: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.15 }}
-              className="flex flex-col items-center text-center p-10 bg-white rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-b-4 border-transparent hover:border-[#7FE7DC]"
+              className="flex flex-col items-center text-center p-10 bg-white rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-b-4 border-transparent hover:border-[#dbaf45]"
             >
-              <div className="w-20 h-20 bg-gradient-to-br from-[#7FE7DC] to-[#5EC7BC] rounded-full flex items-center justify-center text-white mb-6 shadow-lg shadow-[#7FE7DC]/30">
+              {/* Gradiente dourado puro conforme solicitado */}
+              <div className="w-20 h-20 bg-gradient-to-br from-[#aa750b] to-[#dbaf45] rounded-full flex items-center justify-center text-white mb-6 shadow-lg shadow-[#aa750b]/20">
                 <feature.icon size={36} />
               </div>
               <h3 className="font-bold text-gray-900 text-2xl mb-4 font-serif">{feature.title}</h3>

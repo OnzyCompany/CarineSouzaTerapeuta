@@ -11,8 +11,8 @@ const CTA: React.FC = () => {
 
   return (
     <section className="py-24 relative overflow-hidden">
-      {/* Background Gradient */}
-      <div className="absolute inset-0 bg-gradient-to-r from-[#7FE7DC] to-[#FFB6C1] opacity-90" />
+      {/* Background Gradient puramente azul conforme nova regra */}
+      <div className="absolute inset-0 bg-gradient-to-r from-[#01a7aa] to-[#208b8d] opacity-95" />
       
       {/* Decorative Overlay */}
       <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10 mix-blend-overlay" />
@@ -29,7 +29,7 @@ const CTA: React.FC = () => {
             Pronto(a) para dar o primeiro passo?
           </h2>
           
-          <p className="text-xl md:text-2xl font-medium mb-10 opacity-95 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-xl md:text-2xl font-bold mb-10 opacity-95 max-w-2xl mx-auto leading-relaxed">
             Agende sua primeira sessão com condições especiais e comece hoje seu processo de autocura.
           </p>
 
@@ -37,11 +37,12 @@ const CTA: React.FC = () => {
             whileHover={{ scale: 1.05 }}
             className="inline-block"
           >
+            {/* Botão Dourado com sombra de texto interna */}
             <Button 
-              variant="white" 
+              variant="primary" 
               size="lg" 
               onClick={handleWhatsAppClick}
-              className="mb-12"
+              className="mb-12 !from-[#aa750b] !to-[#dbaf45] shadow-2xl"
             >
               <MessageCircle className="mr-2 w-6 h-6" />
               Falar no WhatsApp

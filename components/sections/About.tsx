@@ -1,16 +1,25 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import SectionHeading from '../ui/SectionHeading';
 import { Quote } from 'lucide-react';
 
 const About: React.FC = () => {
   return (
     <section id="about" className="py-24 bg-[#F2F9F9] relative">
       <div className="container mx-auto px-4">
-        <SectionHeading 
-          title="Minha História, Sua Inspiração" 
-          subtitle="Conheça a jornada por trás da profissional que irá lhe acolher."
-        />
+        {/* Título unificado no gradiente azul água conforme solicitado */}
+        <div className="mb-12 text-center">
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-3xl md:text-5xl font-serif font-bold text-gray-800 mb-4"
+          >
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#01a7aa] to-[#40ced0]">Minha História</span>, 
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#01a7aa] to-[#40ced0] ml-3">Sua Inspiração</span>
+          </motion.h2>
+          <div className="h-1.5 w-24 bg-gradient-to-r from-[#01a7aa] to-[#40ced0] mx-auto rounded-full" />
+        </div>
 
         <div className="flex flex-col lg:flex-row gap-16 items-center mt-12">
           
@@ -28,8 +37,7 @@ const About: React.FC = () => {
                   alt="Carine Souza" 
                   className="rounded-tr-[5rem] rounded-bl-[5rem] shadow-2xl w-full max-w-md mx-auto object-cover z-10 relative grayscale hover:grayscale-0 transition-all duration-700"
                 />
-                {/* Graphic element */}
-                <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-[#7FE7DC] rounded-full opacity-20 -z-0 blur-2xl"></div>
+                <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-[#01a7aa] rounded-full opacity-20 -z-0 blur-2xl"></div>
              </div>
           </motion.div>
 
@@ -42,26 +50,26 @@ const About: React.FC = () => {
             className="w-full lg:w-1/2"
           >
             <div className="bg-white p-10 rounded-2xl border border-gray-200 shadow-xl relative">
-              <Quote className="absolute top-6 left-6 text-[#FFB6C1] opacity-50 w-12 h-12 rotate-180" />
+              <Quote className="absolute top-6 left-6 text-[#01a7aa] opacity-40 w-12 h-12 rotate-180" />
               
               <div className="prose prose-lg text-gray-800 relative z-10 pl-4 font-sans">
-                <p className="mb-6 leading-relaxed font-medium text-lg md:text-xl text-gray-700">
+                <p className="mb-6 leading-relaxed font-bold text-lg md:text-xl text-gray-700">
                   Meu nome é Carine Souza, sou casada e tenho três filhos. Fui confeiteira, tenho curso Técnico em RH e hoje vivo essa linda missão como Terapeuta Especialista no Universo Emocional Feminino 🌷
                 </p>
 
                 <p className="mb-6 italic text-gray-600 font-serif text-2xl md:text-3xl leading-relaxed">
                   "Eu fui uma criança rejeitada pelo meu pai desde o meu primeiro ano de vida..."
                 </p>
-                <p className="mb-6 leading-relaxed font-medium text-lg md:text-xl text-gray-700">
+                <p className="mb-6 leading-relaxed font-bold text-lg md:text-xl text-gray-700">
                   Cresci em um lar cheio de agitação, sem atenção, amor e carinho da minha mãe (somente minha avó me acolhia). 
                   Sofri com as feridas emocionais do abandono, rejeição e injustiça.
                 </p>
-                <p className="font-bold text-gray-900 text-xl md:text-2xl mb-6 bg-gradient-to-r from-[#7FE7DC]/20 to-transparent p-3 rounded-lg inline-block">
+                <p className="font-bold text-gray-900 text-xl md:text-2xl mb-6 bg-gradient-to-r from-[#01a7aa]/20 to-transparent p-3 rounded-lg inline-block">
                   Sou uma sobrevivente! Hoje aprendi a viver!
                 </p>
-                <p className="leading-relaxed font-medium text-lg md:text-xl text-gray-700">
+                <p className="leading-relaxed font-bold text-lg md:text-xl text-gray-700">
                   Repeti vários padrões de comportamento e sofri com baixa autoestima por anos. 
-                  Encontrei a minha cura na <strong className="text-[#5EC7BC]">Terapia Integrativa</strong>! E hoje estou aqui para acolher a sua história e te ajudar em seu <span className="text-[#F06292] font-bold">Processo de Autocura Emocional 🍃</span>
+                  Encontrei a minha cura na <strong className="text-[#01a7aa]">Terapia Integrativa</strong>! E hoje estou aqui para acolher a sua história e te ajudar em seu <span className="text-[#aa750b] font-bold">Processo de Autocura Emocional 🍃</span>
                 </p>
               </div>
 

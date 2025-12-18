@@ -26,7 +26,7 @@ const testimonials = [
 
 const Testimonials: React.FC = () => {
   return (
-    <section id="testimonials" className="py-24 bg-gradient-to-b from-white to-[#FFF0F5]">
+    <section id="testimonials" className="py-24 bg-gradient-to-b from-white to-[#FDF9F0]">
       <div className="container mx-auto px-4">
         <SectionHeading 
           title="Histórias de Transformação" 
@@ -43,13 +43,13 @@ const Testimonials: React.FC = () => {
               transition={{ duration: 0.6, delay: index * 0.2 }}
               className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 flex flex-col relative hover:-translate-y-2 transition-transform duration-300"
             >
-              <div className="absolute -top-5 left-8 bg-[#7FE7DC] p-3 rounded-full shadow-md">
+              <div className="absolute -top-5 left-8 bg-[#01a7aa] p-3 rounded-full shadow-md">
                 <Quote className="text-white w-6 h-6 fill-current" />
               </div>
               
               <div className="flex gap-1 mb-6 mt-4">
                 {[1, 2, 3, 4, 5].map((star) => (
-                  <Star key={star} className="w-5 h-5 text-[#FFB6C1] fill-current" />
+                  <Star key={star} className="w-5 h-5 text-[#dbaf45] fill-current" />
                 ))}
               </div>
 
@@ -59,7 +59,7 @@ const Testimonials: React.FC = () => {
               
               <div className="pt-6 border-t border-gray-100">
                 <p className="font-serif font-bold text-gray-900 text-xl">{testimonial.author}</p>
-                <p className="text-[#5EC7BC] font-medium text-sm uppercase tracking-wide mt-1">{testimonial.role}</p>
+                <p className="text-[#01a7aa] font-medium text-sm uppercase tracking-wide mt-1">{testimonial.role}</p>
               </div>
             </motion.div>
           ))}

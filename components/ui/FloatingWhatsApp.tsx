@@ -15,10 +15,10 @@ const FloatingWhatsApp: React.FC = () => {
       transition={{ delay: 1, type: "spring", stiffness: 260, damping: 20 }}
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.9 }}
-      className="fixed bottom-6 right-6 z-50 flex items-center justify-center w-16 h-16 bg-[#25D366] rounded-full shadow-2xl cursor-pointer group"
+      className="fixed bottom-6 right-6 z-50 flex items-center justify-center w-16 h-16 bg-gradient-to-br from-[#aa750b] to-[#dbaf45] rounded-full shadow-2xl cursor-pointer group"
       aria-label="Fale conosco no WhatsApp"
     >
-      <span className="absolute inset-0 rounded-full bg-[#25D366] animate-ping opacity-75"></span>
+      <span className="absolute inset-0 rounded-full bg-[#dbaf45] animate-ping opacity-40"></span>
       <div className="relative z-10">
         <MessageCircle className="w-8 h-8 text-white fill-white" />
       </div>

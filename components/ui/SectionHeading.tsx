@@ -30,7 +30,7 @@ const SectionHeading: React.FC<SectionHeadingProps> = ({ title, subtitle, alignm
           <p className={`text-gray-600 max-w-2xl ${alignment === 'center' ? 'mx-auto' : ''}`}>
             {subtitle}
           </p>
-          <div className={`h-1 w-20 bg-gradient-to-r from-[#7FE7DC] to-[#FFB6C1] mt-4 rounded-full ${alignment === 'left' ? 'self-start' : ''}`} />
+          <div className={`h-1 w-20 bg-gradient-to-r from-[#01a7aa] to-[#dbaf45] mt-4 rounded-full ${alignment === 'left' ? 'self-start' : ''}`} />
         </motion.div>
       )}
     </div>
