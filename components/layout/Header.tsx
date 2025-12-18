@@ -25,20 +25,25 @@ const Header: React.FC = () => {
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
+    
+    // Primeiro fechamos o menu mobile se estiver aberto
     setMobileMenuOpen(false);
     
     const targetId = href.replace('#', '');
     const element = document.getElementById(targetId);
     
     if (element) {
-      const headerOffset = 80;
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+      // Pequeno delay para permitir que o menu mobile comece a fechar e não atrapalhe o cálculo da posição
+      setTimeout(() => {
+        const headerOffset = 100; // Ajustado para bater com o scroll-padding do HTML
+        const elementPosition = element.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth'
-      });
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+      }, 50);
     }
   };
 
@@ -49,6 +54,7 @@ const Header: React.FC = () => {
       }`}
     >
       <div className="container mx-auto px-4 md:px-8 flex items-center justify-between">
+        {/* Logo */}
         <a 
           href="#hero" 
           onClick={(e) => handleNavClick(e, '#hero')}
@@ -82,33 +88,43 @@ const Header: React.FC = () => {
 
         {/* Mobile Toggle */}
         <button 
-          className="lg:hidden text-gray-800 focus:outline-none p-3 hover:bg-gray-100 rounded-full transition-colors"
+          className="lg:hidden text-gray-800 focus:outline-none p-3 hover:bg-gray-100 rounded-full transition-colors z-50"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          aria-label={mobileMenuOpen ? "Fechar menu" : "Abrir menu"}
         >
           {mobileMenuOpen ? <X size={36} /> : <Menu size={36} />}
         </button>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu Overlay */}
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden bg-white border-b border-gray-100 shadow-2xl overflow-hidden"
+            initial={{ opacity: 0, x: '100%' }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: '100%' }}
+            transition={{ type: 'spring', damping: 25, stiffness: 200 }}
+            className="fixed inset-0 bg-white z-40 lg:hidden flex flex-col justify-center items-center"
           >
-            <div className="container mx-auto px-6 py-10 flex flex-col space-y-6">
+            <div className="flex flex-col space-y-8 text-center">
               {navItems.map((item) => (
                 <a
                   key={item.label}
                   href={item.href}
                   onClick={(e) => handleNavClick(e, item.href)}
-                  className="text-gray-900 font-bold text-2xl py-3 border-b border-gray-50 hover:text-[#01a7aa] cursor-pointer tracking-tight"
+                  className="text-gray-900 font-serif font-bold text-3xl hover:text-[#01a7aa] cursor-pointer tracking-tight transition-colors"
                 >
                   {item.label}
                 </a>
               ))}
+              
+              <div className="pt-10">
+                 <img 
+                    src="https://res.cloudinary.com/dxhlvrach/image/upload/v1766075026/Terapeuta_20251218_132103_0000_hr9cm4.png" 
+                    alt="Logo" 
+                    className="h-20 mx-auto opacity-50"
+                 />
+              </div>
             </div>
           </motion.div>
         )}

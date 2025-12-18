@@ -2,6 +2,23 @@ import React from 'react';
 import { Instagram, Facebook, MapPin, Clock } from 'lucide-react';
 
 const Footer: React.FC = () => {
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    const targetId = href.replace('#', '');
+    const element = document.getElementById(targetId);
+    
+    if (element) {
+      const headerOffset = 100;
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
+
   return (
     <footer className="bg-white pt-24 pb-12 border-t border-gray-100">
       <div className="container mx-auto px-4">
@@ -45,10 +62,20 @@ const Footer: React.FC = () => {
           <div className="space-y-10">
             <h4 className="font-bold text-gray-900 text-2xl font-serif">Navegação</h4>
             <ul className="space-y-5">
-              {['Sobre Mim', 'Serviços', 'Palestras', 'FAQ', 'Contato'].map((link) => (
-                <li key={link}>
-                  <a href={`#${link.toLowerCase().replace(' ', '-')}`} className="text-gray-600 hover:text-[#01a7aa] transition-colors font-bold text-xl">
-                    {link}
+              {[
+                { label: 'Sobre Mim', href: '#about' },
+                { label: 'Serviços', href: '#services' },
+                { label: 'Palestras', href: '#events' },
+                { label: 'FAQ', href: '#faq' },
+                { label: 'Contato', href: '#contact' }
+              ].map((item) => (
+                <li key={item.label}>
+                  <a 
+                    href={item.href} 
+                    onClick={(e) => handleNavClick(e, item.href)}
+                    className="text-gray-600 hover:text-[#01a7aa] transition-colors font-bold text-xl cursor-pointer"
+                  >
+                    {item.label}
                   </a>
                 </li>
               ))}
