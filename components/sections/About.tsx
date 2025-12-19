@@ -54,7 +54,7 @@ const About: React.FC = () => {
               
               <div className="relative z-10 space-y-6">
                 <p className="text-gray-800 leading-relaxed font-bold text-xl md:text-2xl">
-                  Meu nome é Carine Souza, sou casada e tenho três filhos. Fui confeiteira, tenho curso Técnico em RH e hoje vivo essa linda missão como Terapeuta Especialista no Universo Emocional Feminino 🌷
+                  Meu nome é Carine Souza, tenho três filhos. Fui confeiteira, tenho curso Técnico em RH e hoje vivo essa linda missão como Terapeuta Especialista no Universo Emocional Feminino 🌷
                 </p>
 
                 <div className="py-4">

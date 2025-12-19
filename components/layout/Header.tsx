@@ -23,7 +23,7 @@ const Header: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Bloquear scroll do body quando menu estiver aberto
+  // Bloquear scroll do body quando menu estiver aberto para evitar confusão visual
   useEffect(() => {
     if (mobileMenuOpen) {
       document.body.style.overflow = 'hidden';
@@ -40,6 +40,7 @@ const Header: React.FC = () => {
     const element = document.getElementById(targetId);
     
     if (element) {
+      // Pequeno delay para garantir que o menu fechou
       setTimeout(() => {
         const headerOffset = 90; 
         const elementPosition = element.getBoundingClientRect().top;
@@ -49,13 +50,13 @@ const Header: React.FC = () => {
           top: offsetPosition,
           behavior: 'smooth'
         });
-      }, 100);
+      }, 150);
     }
   };
 
   return (
     <header 
-      className={`fixed top-0 left-0 right-0 z-[60] transition-all duration-500 ${
+      className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-500 ${
         isScrolled ? 'bg-white shadow-md py-1' : 'bg-transparent py-2'
       }`}
     >
@@ -64,7 +65,7 @@ const Header: React.FC = () => {
         <a 
           href="#hero" 
           onClick={(e) => handleNavClick(e, '#hero')}
-          className="relative z-[70] block cursor-pointer transition-transform hover:scale-105"
+          className="relative z-[110] block cursor-pointer transition-transform hover:scale-105"
         >
           <img 
             src="https://res.cloudinary.com/dxhlvrach/image/upload/v1766075026/Terapeuta_20251218_132103_0000_hr9cm4.png" 
@@ -92,9 +93,9 @@ const Header: React.FC = () => {
           ))}
         </nav>
 
-        {/* Mobile Toggle - Z-index alto para ficar sobre o menu */}
+        {/* Mobile Toggle Button */}
         <button 
-          className="lg:hidden text-gray-900 focus:outline-none p-3 z-[110] relative hover:bg-gray-100 rounded-full transition-colors"
+          className="lg:hidden text-gray-900 focus:outline-none p-3 z-[120] relative hover:bg-gray-100 rounded-full transition-colors"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           aria-label={mobileMenuOpen ? "Fechar menu" : "Abrir menu"}
         >
@@ -102,26 +103,27 @@ const Header: React.FC = () => {
         </button>
       </div>
 
-      {/* Mobile Menu Overlay - Tela Cheia e Opaco */}
+      {/* Mobile Menu Overlay - Solução para o bug de aglomeração */}
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-white z-[100] lg:hidden flex flex-col overflow-y-auto"
+            initial={{ opacity: 0, x: '100%' }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: '100%' }}
+            transition={{ type: 'spring', damping: 25, stiffness: 200 }}
+            className="fixed inset-0 bg-white z-[110] lg:hidden flex flex-col overflow-y-auto"
           >
             <div className="flex flex-col items-center justify-center min-h-screen py-20 px-6">
-              <div className="flex flex-col space-y-6 w-full max-w-sm text-center">
+              <div className="flex flex-col space-y-4 w-full max-w-sm text-center">
                 {navItems.map((item, idx) => (
                   <motion.a
                     key={item.label}
-                    initial={{ opacity: 0, y: 20 }}
+                    initial={{ opacity: 0, y: 15 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: idx * 0.05 }}
                     href={item.href}
                     onClick={(e) => handleNavClick(e, item.href)}
-                    className="text-gray-900 font-serif font-bold text-3xl py-4 border-b border-gray-50 hover:text-[#01a7aa] transition-colors"
+                    className="text-gray-900 font-serif font-bold text-3xl py-4 border-b border-gray-100 hover:text-[#01a7aa] transition-colors active:bg-gray-50"
                   >
                     {item.label}
                   </motion.a>
@@ -130,14 +132,14 @@ const Header: React.FC = () => {
               
               <motion.div 
                 initial={{ opacity: 0 }}
-                animate={{ opacity: 0.4 }}
-                transition={{ delay: 0.4 }}
-                className="mt-16"
+                animate={{ opacity: 0.3 }}
+                transition={{ delay: 0.5 }}
+                className="mt-12"
               >
                  <img 
                     src="https://res.cloudinary.com/dxhlvrach/image/upload/v1766075026/Terapeuta_20251218_132103_0000_hr9cm4.png" 
-                    alt="Logo Footer" 
-                    className="h-24 mx-auto object-contain"
+                    alt="Logo Overlay" 
+                    className="h-20 mx-auto object-contain grayscale"
                  />
               </motion.div>
             </div>
